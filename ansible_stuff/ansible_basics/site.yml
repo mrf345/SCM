@@ -1,0 +1,9 @@
+---
+- name: Show off some basic Ansible features
+  hosts: testhosts
+  #user: guest
+  #sudo: yes
+  # remote_user: guest
+
+  roles:
+    - common

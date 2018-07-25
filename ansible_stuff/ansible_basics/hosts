@@ -1,0 +1,21 @@
+[all:vars]
+ansible_connection=ssh 
+ansible_ssh_user=guest
+ansible_ssh_pass=guest
+
+[testhosts]
+# list of servers ips to control
+# 10.0.3.152
+guest@192.168.1.32
+###################
+# mail.example.com
+
+# [webservers]
+# foo.example.com
+# bar.example.com
+
+# [dbservers]
+# one.example.com
+# two.example.com
+# three.example.com
+

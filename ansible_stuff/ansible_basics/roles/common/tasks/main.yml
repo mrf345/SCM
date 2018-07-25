@@ -1,0 +1,29 @@
+---
+# updating the system
+# - name: Update package lists
+#   pacman: update_cache=yes
+
+# single package state
+- name: Install python
+  pacman: name=python state=present
+
+- name: Install pip
+  pacman: name=python-pip state=present
+
+
+
+# multiple packages states
+- name: Install several packages at once python stuff
+  pacman: name={{ item }} state=present
+  with_items:
+    - python
+    - python-pip
+
+# adding user
+# - name: Create the 'dave' user
+#   user: name=dave shell=/bin/bash
+#   #user: name=dave shell=/bin/bash groups=admins,developers append=yes
+
+- name: Deploying our small livestreem app
+  template: src=/home/mrf3/livefeed/app.py dest=~
+  notify: start livefeed

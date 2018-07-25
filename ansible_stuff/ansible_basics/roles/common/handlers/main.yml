@@ -1,0 +1,7 @@
+---
+# restart that sshd, dude!
+- name: restart sshd
+  service: name=ssh state=restarted
+
+- name: start livefeed
+  command: python ~/app.py
